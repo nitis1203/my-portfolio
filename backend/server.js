@@ -34,6 +34,7 @@ app.get('/leetcode/:username', async (req, res) => {
     const result = {
       rank: data.profile.ranking,
       problemsSolved: {
+        total: data.submitStats.acSubmissionNum.find(item => item.difficulty === 'All').count,
         easy: data.submitStats.acSubmissionNum.find(item => item.difficulty === 'Easy').count,
         medium: data.submitStats.acSubmissionNum.find(item => item.difficulty === 'Medium').count,
         hard: data.submitStats.acSubmissionNum.find(item => item.difficulty === 'Hard').count
