@@ -1,14 +1,42 @@
-import React from "react";
-import Portrait from "./Images/my-portrait.png"
+import React, { useEffect } from "react";
+import Portrait from "./Images/my-portrait 2.png";
 
 const About = () => {
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.pageYOffset;
+            const zoomEffect = Math.min(scrollPosition / 800, 1); 
+            const translateEffect = Math.min(scrollPosition / 5, 100);
+
+            const image = document.querySelector(".my-portrait img");
+            const intro1 = document.querySelector(".intro-1");
+            const intro2 = document.querySelector(".intro-2");
+
+            image.style.transform = `scale(${1 + (zoomEffect/3)})`;
+            image.style.opacity = `${1 - (zoomEffect*2)}`;
+
+            intro1.style.transform = `translate(${20 - translateEffect}%, 95%)`;
+            intro1.style.opacity = `${1 - zoomEffect}`;
+
+            intro2.style.transform = `translate(${-5 + translateEffect}%, 95%)`;
+            intro2.style.opacity = `${1 - zoomEffect}`;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <div>
             <div className="home-about">
                 <div className="intro-1">
-                    <h1>Hi,<br/>
-                        <span>I'm </span>
-                        <span className="name-highlight">Nitis</span>
+                    <h1>Hi,</h1>
+                    <h1>
+                        I'm 
+                        <span id="name-highlight"> Nitis</span>
                     </h1>
                     <p>Building and designing the digital world.</p>
                 </div>
@@ -21,11 +49,10 @@ const About = () => {
                 </div>
             </div>
             <div className="about-me">
-                
+                <h1>hi</h1>
             </div>
         </div>
     );
 };
-
 
 export default About;
