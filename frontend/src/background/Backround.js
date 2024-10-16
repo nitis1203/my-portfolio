@@ -10,7 +10,7 @@ const BackgroundWrapper = styled.div`
   height: 100vh;
   overflow: hidden;
   background-color: #252423;
-  z-index: -1; /* Place this behind other content */
+  z-index: -1;
 `;
 
 const Background = () => (
