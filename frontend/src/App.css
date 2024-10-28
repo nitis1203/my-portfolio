@@ -110,7 +110,7 @@ p {
 }
 
 .about-me {
-  background-color: rgba(1, 1, 1, 0.5);
+  background-color: rgba(1, 1, 1, 0.7);
   border-radius: 15px;
   padding: 20px;
   padding-top: 50px;
@@ -132,4 +132,64 @@ p {
 .vern-img {
   width: 500px;
   margin-top: -30px;
+}
+
+.skills-container {
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills {
+  background-color: rgba(1, 1, 1, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #F6F4F2;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two equal columns */
+  gap: 40px 80px;
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.skill-label {
+  width: 100px; /* Fixed width for the skill label */
+  font-weight: bold; /* Bold text for skill labels */
+}
+
+.bar-container {
+  flex-grow: 1; /* Allow the bar container to grow and fill space */
+  background-color: #252423; /* Background color for the bar container */
+  height: 8px; /* Height of the skill bar */
+  margin: 0 10px; /* Spacing around the bar */
+  position: relative; /* For positioning the level bar */
+}
+
+.level-bar {
+  background-color: #F74F4D; /* Red color for the level indicator */
+  height: 100%; /* Full height of the bar container */
+  position: absolute; /* Positioning */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+.skill-level {
+  min-width: 50px; /* Minimum width for the percentage label */
+  text-align: right; /* Align percentage to the right */
 }
