@@ -34,7 +34,7 @@ h1 {
 }
 
 p {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .home-about {
@@ -99,10 +99,37 @@ p {
   color: rgb(109, 109, 109);
 }
 
-.about-me {
+.about-me-container {
   height: 100vh;
-  background-color: #DADEDF;
   position: relative;
   z-index: 2;
   margin-top: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me {
+  background-color: rgba(1, 1, 1, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  padding-top: 50px;
+  padding-left: 50px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  color: #F6F4F2;
+}
+
+.bio-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.vern-img {
+  width: 500px;
+  margin-top: -30px;
 }
